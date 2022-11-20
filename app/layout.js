@@ -5,6 +5,10 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-33DZZ3FTZF"
+        ></script>
         <Script id="google-analytics" strategy="afterInteractive">
           {`
         window.dataLayer = window.dataLayer || [];

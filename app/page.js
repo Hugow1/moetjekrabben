@@ -17,17 +17,17 @@ export default async function page() {
 
   function calculator() {
     if (avarageHum > 80 && avarageTemp < 2) {
-      return "Ja, waarschijnlijk moet je krabben";
+      return "Ja 🥶, waarschijnlijk moet je krabben";
     } else {
-      return "Waarschijnlijk hoef je niet te krabben";
+      return "Waarschijnlijk hoef je niet te krabben 🎉";
     }
   }
 
   return (
-    <div className="flex flex-col justify-center items-center bg-slate-700 h-screen w-full p-5">
-      <div className="text-white text-center max-w-3xl">
-        <h1 className="text-5xl mb-4">Moet je vandaag krabben?</h1>
-        <p className="text-xl mb-10">{calculator()}</p>
+    <div className="flex flex-col items-center justify-center w-full h-screen p-5 bg-slate-700">
+      <div className="max-w-3xl text-center text-white">
+        <h1 className="mb-4 text-5xl">Moet je vandaag krabben?</h1>
+        <p className="mb-10 text-xl">{calculator()}</p>
         <p className="mb-4">
           Dit antwoord is gebaseerd op het gemiddelde weerbericht voor vandaag
           voor Nederland. Hiermee heb je een tool waarmee je zou kunnen bepalen
@@ -45,7 +45,7 @@ export default async function page() {
           er ook minder vocht in de lucht zitten.
         </p>
       </div>
-      <div className="text-white mt-10 flex flex-col justify-center items-center">
+      <div className="flex flex-col items-center justify-center mt-10 text-white">
         <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>
         <a href="https://www.hugowinder.com">Project by Hugo Winder</a>
       </div>
