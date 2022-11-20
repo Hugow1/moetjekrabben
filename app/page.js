@@ -10,10 +10,16 @@ async function getData() {
 
 export default async function page() {
   const data = await getData();
+  const newDate = new Date();
+  const today = JSON.stringify(newDate).slice(1, 11);
   const temps = data.hourly.temperature_2m.slice(0, 7);
   const humidity = data.hourly.relativehumidity_2m.slice(0, 7);
   const avarageTemp = temps.reduce((a, b) => a + b, 0) / temps.length;
   const avarageHum = humidity.reduce((a, b) => a + b, 0) / humidity.length;
+
+  // Create a new const with the avarage temp rounded to 2 decimals
+  const avarageTempRounded = avarageTemp.toFixed(2);
+  const avarageHumRounded = avarageHum.toFixed(2);
 
   function calculator() {
     if (avarageHum > 80 && avarageTemp < 2) {
@@ -27,7 +33,15 @@ export default async function page() {
     <div className="flex flex-col items-center justify-center w-full h-screen p-5 bg-slate-700">
       <div className="max-w-3xl text-center text-white">
         <h1 className="mb-4 text-5xl">Moet je vandaag krabben?</h1>
-        <p className="mb-10 text-xl">{calculator()}</p>
+        <h2 className="mb-10 text-2xl">{calculator()}</h2>
+        <div className="mb-4">
+          <p>
+            Vannacht ({today}) was het gemiddeld:{" "}
+            <span className="font-bold">{avarageTempRounded}</span> graden
+            Celcius met een luchtvochtigheid van{" "}
+            <span className="font-bold">{avarageHumRounded}%</span>.
+          </p>
+        </div>
         <p className="mb-4">
           Dit antwoord is gebaseerd op het gemiddelde weerbericht voor vandaag
           voor Nederland. Hiermee heb je een tool waarmee je zou kunnen bepalen
