@@ -9,6 +9,11 @@ export default function RootLayout({ children }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-33DZZ3FTZF"
         ></script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7809744649876497"
+          crossorigin="anonymous"
+        ></script>
         <Script id="google-analytics" strategy="afterInteractive">
           {`
         window.dataLayer = window.dataLayer || [];
